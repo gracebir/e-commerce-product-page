@@ -5,7 +5,7 @@ function Navbar() {
     const [open, setOpen] = useState(false)
     const toggle = () => setOpen(!open)
     return (
-        <header className='flex justify-between border-b py-5 lg:py-0'>
+        <header className='flex justify-between border-b py-5 px-6 lg:px-0 lg:py-0'>
             <div className='flex gap-8 flex-row items-center'>
                 <div className='flex flex-row gap-2 items-center'>
                     <img onClick={toggle} src={menu} alt="menu" className='block lg:hidden' />
