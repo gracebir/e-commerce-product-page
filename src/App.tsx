@@ -1,5 +1,5 @@
 import Navbar from "./components/Navbar"
-import Productcard from "./components/ProductCard"
+import Product from "./components/Product"
 
 function App() {
   return (
@@ -7,7 +7,7 @@ function App() {
       <div className="w-full lg:max-w-7xl lg:mx-auto">
         <Navbar/>
         <div>
-          <Productcard/>
+          <Product/>
         </div>
       </div>
     </div>
