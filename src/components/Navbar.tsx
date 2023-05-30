@@ -1,8 +1,18 @@
 import { useState } from 'react'
 import { avatar, basket, logo, menu, close } from '../assets'
 import { navItems } from '../data'
-function Navbar() {
+import Checkout from './Checkout'
+
+type navProp = {
+    prodCount: number
+}
+
+function Navbar({prodCount}:navProp) {
     const [open, setOpen] = useState(false)
+    const [isCheckout, setIsCheckout] = useState(false)
+    const openCheckout = () => {
+        setIsCheckout(!isCheckout)
+    }
     const toggle = () => setOpen(!open)
     return (
         <header className='flex justify-between border-b py-5 px-6 lg:px-0 lg:py-0'>
@@ -31,7 +41,13 @@ function Navbar() {
             )}
 
             <div className='flex flex-row gap-6 lg:gap-8 items-center'>
-                <img src={basket} alt="basket" />
+                <div onClick={openCheckout} className="relative flex items-center cursor-pointer">
+                    <div className='absolute px-1 font-medium top-0 right-0 rounded-full text-center text-[.8rem] text-white bg-orange-color'>
+                        <span className="">{prodCount}</span>
+                    </div>
+                    <img src={basket} alt="basket" className="h-8" />
+                </div>
+                {isCheckout && (<Checkout count={prodCount}/>)}
                 <img src={avatar} className='w-12 h-12' alt="avatar" />
             </div>
         </header>
