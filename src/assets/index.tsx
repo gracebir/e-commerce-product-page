@@ -15,6 +15,7 @@ import thumbnail3 from './image-product-3-thumbnail.jpg'
 import product4 from './image-product-4.jpg'
 import thumbnail4 from './image-product-4-thumbnail.jpg'
 import minus from './icon-minus.svg'
+import track from './icon-delete.svg'
 
 export {
     logo,
@@ -33,5 +34,6 @@ export {
     thumbnail2,
     thumbnail3,
     thumbnail4,
-    minus
+    minus,
+    track
 }

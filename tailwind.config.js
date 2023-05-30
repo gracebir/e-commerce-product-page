@@ -16,7 +16,12 @@ export default {
         "white-color":"hsl(0, 0%, 100%)",
         "black-opac":"hsl(0, 0%, 0%)"
       },
-      fontFamily: ['Kumbh Sans', 'sans-serif']
+      fontFamily: ['Kumbh Sans', 'sans-serif'],
+      boxShadow:{
+        "checkout": `-2px 4px 5px 0px rgba(186,183,183,0.75);
+        -webkit-box-shadow: -2px 4px 5px 0px rgba(186,183,183,0.75);
+        -moz-box-shadow: -2px 4px 5px 0px rgba(186,183,183,0.75);`
+      }
     },
   },
   plugins: [],
