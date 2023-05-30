@@ -4,13 +4,19 @@ import Productcard from "./ProductCard"
 import { minus, plus } from "../assets";
 import { BsCart3 } from 'react-icons/bs'
 
-function Product() {
+type prodProp = {
+    setProdCount: React.Dispatch<React.SetStateAction<number>>
+}
+
+function Product({setProdCount}: prodProp) {
     const [qty, setQty] = useState(0);
     const decrement = () => {
         if (qty >= 1) {
             setQty(qty - 1)
         }
     }
+
+    const handleClick = () => setProdCount(1) 
 
     const increment = () => {
         setQty(qty + 1)
@@ -39,7 +45,7 @@ function Product() {
                             <span className="font-medium">{qty}</span>
                             <img onClick={increment} className="cursor-pointer" src={plus} alt="" />
                         </div>
-                        <button className="bg-orange-color flex-1 py-3 rounded-xl font-bold cursor-pointer flex justify-center gap-2 text-white">
+                        <button onClick={handleClick} className="bg-orange-color flex-1 py-3 rounded-xl font-bold cursor-pointer flex justify-center gap-2 text-white">
                             <BsCart3 size={20} />
                             Add to cart
                         </button>

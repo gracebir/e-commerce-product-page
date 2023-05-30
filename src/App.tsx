@@ -1,13 +1,15 @@
+import { useState } from "react"
 import Navbar from "./components/Navbar"
 import Product from "./components/Product"
 
 function App() {
+  const [prodCount, setProdCount] = useState(0);
   return (
-    <div className="bg-light-grayish-blue h-screen">
+    <div className="bg-light-grayish-blue h-screen lg:relative">
       <div className="w-full lg:max-w-7xl lg:mx-auto">
-        <Navbar/>
+        <Navbar prodCount={prodCount}/>
         <div>
-          <Product/>
+          <Product setProdCount={setProdCount}/>
         </div>
       </div>
     </div>
