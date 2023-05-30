@@ -3,12 +3,11 @@ import { products } from "../data"
 
 function Productcard() {
   const [prod, setProd] = useState(products[0])
-  const [isCurrent, setIsCurrent] = useState(false);
+  const [activeIndex, setActiveIndex] = useState(0)
   const switchProd = (i: number) => {
     console.log(i)
     setProd(products[i])
-    setIsCurrent(true)
-    console.log(isCurrent)
+    setActiveIndex(i)
   }
   return (
     <div className="lg:flex flex-col gap-8 hidden">
@@ -17,8 +16,10 @@ function Productcard() {
       </div>
       <div className="lg:flex gap-9">
         {products.map((product, i) => (
-          <div onClick={()=> switchProd(i)} key={i} className={`w-[110px] rounded-xl cursor-pointer`}>
-            <img className="w-full rounded-xl" src={product.thumbnail} alt="" />
+          <div
+            onClick={() => switchProd(i)} key={i}
+            className={`w-[110px] rounded-xl cursor-pointer ${activeIndex === i ? "border-2 border-orange-color" : ""}`}>
+            <img className={`w-full rounded-xl h-full ${activeIndex === i ? 'opacity-50' : ''}`} src={product.thumbnail} alt="" />
           </div>
         ))}
       </div>
